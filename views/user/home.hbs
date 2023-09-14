@@ -1,0 +1,19 @@
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 welcome-container">
+                <div class="jumbotron text-center">
+                    <h1 class="display-4">Welcome, User!</h1>
+                    <!-- Replace "User" with the actual user's name -->
+                    <p class="lead">We're glad to have you here.</p>
+                    <hr class="my-4">
+                    <button id="btn" class="btn btn-danger btn-lg">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click',()=>{
+            window.location.href= '/logout'
+        })
+    </script>

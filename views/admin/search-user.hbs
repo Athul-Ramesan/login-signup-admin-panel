@@ -1,0 +1,77 @@
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Home Link -->
+            <a class="navbar-brand" href="/admin">Home</a>
+
+            <!-- Navbar Toggler Button (for mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Logout Button -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="admin-search-section">
+    <div class="container-fluid py-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                <form action="/admin/dashboard/users/search-user" method="post">
+                    <div class="form-control-custom">
+                        {{!-- <select class="form-select" name="searchBy">
+                            <option value="name">search by username</option>
+                            <option value="email">search by email</option>
+                        </select> --}}
+                        <input class="form-control" type="search" placeholder="Type to search..." name="searchText">
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{#if notFound}}
+    <div class="container-fluid p-5 admin-dash">
+        <h2 class="text-white">{{notFound }} !</h2>
+    </div>
+    {{else}}
+    <div class="container-fluid p-5 admin-dash">
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            {{!-- <th scope="col">No</th> --}}
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                        <tr>
+                            {{!-- <th scope="row">{{ @index }}</th> --}}
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td class="d-flex g-2">
+                                <a href="/admin/dashboard/users/edit?id={{id}}"
+                                    class="btn btn-sm btn-primary me-2">Edit</a>
+                                <a href="/admin/dashboard/users/delete?id={{id}}"
+                                    class="btn btn-sm btn-danger" onclick="alert('Would you like to delete the user')">Delete</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</section>

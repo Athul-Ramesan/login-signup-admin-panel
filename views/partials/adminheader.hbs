@@ -1,0 +1,28 @@
+<header class="admin-home-header">
+    <div class="container-custom">
+        <a href="/admin/dashboard/" class="text-decoration-none">
+            <h4 class="grad-txt">Admin</h4>
+        </a>
+        <div class="head-btns d-flex align-items-center">
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#signoutadmin">Sign Out</button>
+        </div>
+    </div>
+</header>
+
+<!-- Modal for signout -->
+<div class="modal fade" id="signoutadmin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signoutAdminLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Please confirm your desire to log out ?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">No</button>
+        <a href="/admin/signout" class="btn btn-sm btn-danger">Yes</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Home Link -->
+            <a class="navbar-brand" href="/admin">Home</a>
+
+            <!-- Navbar Toggler Button (for mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Logout Button -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section>
+    <div class="container-fluid p-5 admin-dash">
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            {{!-- <th scope="col">No</th> --}}
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                        <tr>
+                            {{!-- <th scope="row">{{@index }}</th> --}}
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td class="d-flex g-2">
+                                <a href="/admin/dashboard/users/edit?id={{id}}"
+                                    class="btn btn-sm btn-primary me-2">Edit</a>
+                                <button class="btn btn-sm btn-danger"
+                                    onclick="confirmDelete('{{id}}')">Delete</button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+function confirmDelete(id) {
+    if (confirm('Would you like to delete the user')) {
+        // The user clicked "OK," so proceed with the deletion
+        window.location.href = "/admin/dashboard/users/delete?id=" + id;
+    } else {
+        // The user clicked "Cancel," do nothing
+    }
+}
+</script>
+
+

@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #1a1313e0;
+}
+
+section {
+    background-color: var(--primary);
+}
+
+section .admin-dash {
+    min-height: 100vh;
+}
+
+.table-container {
+    width: 100%;
+    border: 1px solid #3729295d;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.table {
+    --bs-table-bg: var(--primary) !important;
+    --bs-table-color: #fff;
+    --bs-table-border-color: #ffffff0e;
+}
+
+.card h3 {
+    font-weight: bolder;
+    background: linear-gradient(40deg, #93bbd5, hsl(227, 32%, 43%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card form label {
+    color: var(--primary);
+}
+
+.card form input {
+    border: 1px solid var(--primary);
+}
+
+.card form input[type="number"]::-webkit-outer-spin-button,
+.card form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.card form .input-group-text {
+    border: 1px solid var(--primary);
+}
+
+.card form button {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+    color: #fff;
+}
+
+.card form button:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.card a.google {
+    opacity: .85;
+    background-color: #8e0000;
+    color: #fff;
+}
+
+.card a.facebook {
+    opacity: .85;
+    background-color: #15264b;
+    color: #fff;
+}
+
+.card a.google:hover {
+    opacity: 1;
+}
+
+.card a.facebook:hover {
+    opacity: 1;
+}
+
+.testimonial-card .card-up {
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.aqua-gradient {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+}
+
+.testimonial-card .avatar {
+    width: 120px;
+    margin-top: -60px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+.testimonial-card a.btn {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+    color: #fff;
+}
+
+.err-page a.btn {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+}
+
+.admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.admin-dashboard .row-custom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.admin-dashboard .row-custom .head-custom-1 {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.grad-txt {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+.admin-login-card{
+    padding: 3rem 2.5rem;
+    background: transparent;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.user-home{
+    min-height: 100vh;
+}
+
+.user-home header .container-custom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.admin-home-header .container-custom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem 0 4rem;
+    background-color: var(--primary);
+}
+
+.user-home-second-header .card-custom{
+    background-color: transparent;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.user-home-inner-section .card-body-custom{
+    background-color: transparent;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.user-home-inner-section .card {
+    --bs-card-bg: rgba(255, 255, 255, 0);
+}
+@media (max-width:600px) {
+    .admin-dashboard .row-custom {
+        flex-direction: column;
+    }
+}
+
+.admin-dashboard .row-custom .card {
+    width: 260px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--primary);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.admin-dashboard .row-custom .card .top-custom {
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, #2096ff, #2751cf) border-box;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.admin-dashboard .btn {
+    background: linear-gradient(40deg, #2096ff, #2751cf);
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-control-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-control-custom .form-control {
+    width: 60%;
+}
+
+.form-control-custom .form-select {
+    width: 30%;
+}
+
+.form-control-custom .btn {
+    width: 10%;
+}
+
+@media (max-width : 768px) {
+    .form-control-custom {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+    .form-control-custom .form-control{
+        width: 100%;
+    }
+    .form-control-custom .form-select{
+        width: 100%;
+    }
+    .form-control-custom .btn{
+        width: 100%;
+    }
+}
+
+.admin-search-section {
+    min-height: 100vh;
+}
+
+/* popup-styling */
+
+#dialog {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s;
+}
+
+#dialog .dialog-custom {
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: #deffe4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#dialog a.pop-up-btn {
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background-color: #004915;
+    color: white;
+}
+
+#dialog.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#dialog::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#dialog.show::backdrop {
+    opacity: 1;
+    pointer-events: auto;
+}

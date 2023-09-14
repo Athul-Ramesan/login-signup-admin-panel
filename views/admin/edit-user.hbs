@@ -1,0 +1,72 @@
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Home Link -->
+            <a class="navbar-brand" href="/admin">Home</a>
+
+            <!-- Navbar Toggler Button (for mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Logout Button -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="mb-2">Edit User</h3>
+                        {{#if error}}
+                        <span class="text-danger">{{error}}</span>
+                        {{/if}}
+                        {{#if status}}
+                        <span class="text-success">{{status}}</span>
+                        {{/if}}`
+                        <form action="/admin/dashboard/users/edit" method="post">
+                            <input type="text" value="{{data.id}}" name="id" style="visibility: hidden;"/>
+                            <div class="form-outline mb-2">
+                                <label class="form-label w-100 d-flex">Username</label>
+                                <input type="text" class="form-control" value="{{data.name}}" name="name" required />
+                            </div>
+                            <div class="form-outline mb-2">
+                                <label class="form-label w-100 d-flex">Email</label>
+                                <input type="email" class="form-control" value="{{data.email}}" name="email" required />
+                            </div>
+                            <div class="form-outline input-group mb-5">
+                                <label class="form-label w-100 d-flex">Password</label>
+                                <input type="password" id="password-inp" value="" class="form-control" name="password"
+                                    required />
+                                <div class="input-group-text">
+                                    <span id="pass-eye-btn">
+                                        <i id="pass-eye-icon" class="bi bi-eye-slash"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="btn w-100" type="submit">Edit User</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const inpVisibilityButton = document.getElementById('pass-eye-btn');
+const visibilityIcon = document.getElementById('pass-eye-icon');
+inpVisibilityButton.addEventListener('click', () => {
+    const type = document.getElementById('password-inp').getAttribute('type') === "password" ? "text" : "password";
+    document.getElementById('password-inp').setAttribute('type', type);
+    visibilityIcon.classList.toggle('bi-eye');
+})
+</script>

@@ -1,0 +1,44 @@
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center py-5 h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                <div class="card admin-login-card">
+                    <form action="/admin/login" method="post">
+                        <div class="mt-4 text-center">
+                            <h2 class="grad-txt">Log In</h2>
+                            {{#if err}}
+                            <h6 class="text-danger">{{err.message}}</h6>
+                            {{/if}}
+                            <div class="form-outline mt-4 mb-4">
+                                <label class="form-label w-100 d-flex grad-txt">Username</label>
+                                <input type="text" class="form-control" name="username" required />
+                            </div>
+                            <div class="form-outline input-group mb-4">
+                                <label class="form-label w-100 d-flex grad-txt">Password</label>
+                                <input type="password" id="password-inp" class="form-control" name="password" required />
+                                <div class="input-group-text">
+                                    <span id="pass-eye-btn">
+                                        <i id="pass-eye-icon" class="bi bi-eye-slash"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn w-100 btn-sm btn-outline-primary">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const inpVisibilityButton = document.getElementById('pass-eye-btn');
+const visibilityIcon = document.getElementById('pass-eye-icon');
+inpVisibilityButton.addEventListener('click', () => {
+    const type = document.getElementById('password-inp').getAttribute('type') === "password" ? "text" : "password";
+    document.getElementById('password-inp').setAttribute('type', type);
+    visibilityIcon.classList.toggle('bi-eye');
+})
+</script>

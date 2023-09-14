@@ -1,0 +1,62 @@
+
+    <style>
+        body {
+            background-color: #000000;
+        }
+        .login-container {
+            margin-top: 100px;
+        }
+        .custom-card-header{
+            background-color: #d7d3d7;
+        }
+        .custom-card-body{
+            background-image: url(https://unsplash.com/photos/7ACuHoezUYk);
+
+        }
+        .errors{
+            padding-left: 40%;
+        }
+    </style>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 login-container">
+                <div class="card">
+                    <div class="card-header custom-card-header">
+                        <h3 class="text-center">Login</h3>
+                    </div>
+                    <div class="card-body custom-card-body">
+                         {{# if error }}
+                        <p class="errors text-danger" >
+                            {{error}}
+                        </p>
+                    {{/if }}
+                        <form id="loginForm" action="login" method="post">
+                            <div class="form-group">
+                                <label for="username">email</label>
+                                <input type="text" class="form-control" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" >
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mt-3 text-center">
+                    <p class="font-weight-bold text-info">Don't have an account yet? </p>
+                    <a href="/signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <!-- Add your signup form here -->
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal fade" id="adminLoginModal" tabindex="-1" role="dialog" aria-labelledby="adminLoginModalLabel" aria-hidden="true">
+        <!-- Add your admin login form here -->
+    </div>
